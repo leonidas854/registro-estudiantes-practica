@@ -59,7 +59,7 @@ describe('API Estudiantes - Pruebas de Integración (/api)', () => {
     expect(res.body.data.ci).toBe(estudiantePayloadValido.ci);
     // Verificar campos automatizados
     expect(res.body.data.matricula).toContain('SIS');
-    expect(res.body.data.correo_institucional).toContain('@universidad.edu.bo');
+    expect(res.body.data.correo_institucional).toContain('@emi.edu.bo');
     expect(res.body.data.turno).toBe('Tarde');
     expect(res.body.data.fecha_induccion).toBeDefined();
     expect(res.body.data.codigo_verificacion).toBeDefined();

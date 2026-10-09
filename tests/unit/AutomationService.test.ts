@@ -21,7 +21,7 @@ describe('AutomationService - Pruebas Unitarias del Módulo de Automatización',
   test('debe generar correo institucional formateado sin caracteres prohibidos', () => {
     const correo = AutomationService.generarCorreoInstitucional('Martín Fernández Gómez', '7654321');
     // Primer nombre: martin, primer apellido: gomez, ultimos digitos ci: 321
-    expect(correo).toBe('martin.gomez321@universidad.edu.bo');
+    expect(correo).toBe('martin.gomez321@emi.edu.bo');
   });
 
   test('debe asignar turno e inducción en función del semestre', () => {
@@ -51,7 +51,7 @@ describe('AutomationService - Pruebas Unitarias del Módulo de Automatización',
     );
 
     expect(resultado.matricula).toContain('ARQ');
-    expect(resultado.correo_institucional).toBe('camila.rojas432@universidad.edu.bo');
+    expect(resultado.correo_institucional).toBe('camila.rojas432@emi.edu.bo');
     expect(resultado.turno).toBe('Mañana');
     expect(resultado.fecha_induccion).toBeDefined();
     expect(resultado.codigo_verificacion).toBeDefined();

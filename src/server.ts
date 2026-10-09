@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 const server = app.listen(PORT, () => {
   console.log(`=======================================================`);
-  console.log(`  SIS-REG: Sistema de Registro y Admisión Estudiantil  `);
+  console.log(` SIS-REG - EMI: Sistema de Admisión Estudiantil EMI   `);
   console.log(`=======================================================`);
   console.log(`Servidor activo en: http://localhost:${PORT}`);
   console.log(`- Web Formulario:  http://localhost:${PORT}/auth/registro`);

@@ -40,7 +40,7 @@ export class AutomationService {
 
   /**
    * Genera el correo electrónico institucional único
-   * Formato: primer_nombre.primer_apellido{ultimos_3_ci}@universidad.edu.bo
+   * Formato: primer_nombre.primer_apellido{ultimos_3_ci}@emi.edu.bo
    */
   public static generarCorreoInstitucional(nombreCompleto: string, ci: string): string {
     const nombreSanitizado = this.sanitizarTexto(nombreCompleto);
@@ -52,7 +52,7 @@ export class AutomationService {
     const digitosCi = ci.replace(/\D/g, '');
     const sufijoCi = digitosCi.length >= 3 ? digitosCi.slice(-3) : (digitosCi || '001');
 
-    return `${primerNombre}.${primerApellido}${sufijoCi}@universidad.edu.bo`;
+    return `${primerNombre}.${primerApellido}${sufijoCi}@emi.edu.bo`;
   }
 
   /**

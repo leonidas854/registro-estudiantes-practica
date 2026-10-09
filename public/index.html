@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIS-REG | Sistema de Registro y Admisión Estudiantil</title>
-  <meta name="description" content="Caso de estudio: Sistema de Admisión y Registro de Estudiantes">
+  <title>SIS-REG - EMI | Sistema de Registro y Admisión Estudiantil EMI</title>
+  <meta name="description" content="Caso de estudio: Sistema de Admisión y Registro de Estudiantes EMI">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
@@ -12,9 +12,9 @@
 <body>
   <div class="app-container">
     <header class="main-header">
-      <div class="header-badge">Caso de Estudio Universitario</div>
-      <h1 class="system-title">SIS-REG</h1>
-      <p class="system-subtitle">Sistema Web de Admisión y Registro Estudiantil Automatizado</p>
+      <div class="header-badge">Caso de Estudio Universitario - EMI</div>
+      <h1 class="system-title">SIS-REG - EMI</h1>
+      <p class="system-subtitle">Sistema Web de Admisión y Registro Estudiantil Automatizado - EMI</p>
       <nav class="nav-tabs" role="tablist">
         <button class="tab-btn active" id="tabFormBtn" role="tab" aria-selected="true">📝 Nuevo Registro</button>
         <button class="tab-btn" id="tabListBtn" role="tab" aria-selected="false">🎓 Estudiantes Registrados (<span id="totalBadge">0</span>)</button>
@@ -25,7 +25,7 @@
       <section id="formSection" class="tab-content active" role="tabpanel">
         <div class="card form-card">
           <div class="card-header">
-            <h2>Formulario de Admisión Académica</h2>
+            <h2>Formulario de Admisión Académica - EMI</h2>
             <p>Complete los datos requeridos para validación y procesamiento institucional.</p>
           </div>
           <div id="messageBox" class="message-banner hidden" role="alert"></div>
@@ -62,8 +62,9 @@
                 <div class="select-wrapper">
                   <select id="semestre" name="semestre" required>
                     <option value="" disabled selected>Selecciona un semestre</option>
-                    <option value="1">1er Semestre</option><option value="2">2do Semestre</option><option value="3">3er Semestre</option><option value="4">4to Semestre</option><option value="5">5to Semestre</option>
-                    <option value="6">6to Semestre</option><option value="7">7mo Semestre</option><option value="8">8vo Semestre</option><option value="9">9no Semestre</option><option value="10">10mo Semestre</option>
+                    <option value="1">1er Semestre</option><option value="2">2do Semestre</option><option value="3">3er Semestre</option>
+                    <option value="4">4to Semestre</option><option value="5">5to Semestre</option><option value="6">6to Semestre</option>
+                    <option value="7">7mo Semestre</option><option value="8">8vo Semestre</option><option value="9">9no Semestre</option><option value="10">10mo Semestre</option>
                   </select>
                 </div>
                 <span class="field-error" id="error-semestre"></span>
@@ -88,7 +89,7 @@
           </form>
 
           <div id="credentialCard" class="credential-card hidden">
-            <div class="credential-header"><span class="credential-tag">Inscripción Aprobada</span><h3>Credencial Académica Digital</h3></div>
+            <div class="credential-header"><span class="credential-tag">Inscripción Aprobada EMI</span><h3>Credencial Académica Digital - EMI</h3></div>
             <div class="credential-body">
               <div class="cred-item"><span class="cred-label">Estudiante:</span><span class="cred-value" id="credNombre">-</span></div>
               <div class="cred-item"><span class="cred-label">Matrícula Generada:</span><span class="cred-value highlight" id="credMatricula">-</span></div>
@@ -106,7 +107,7 @@
       <section id="listSection" class="tab-content" role="tabpanel">
         <div class="card list-card">
           <div class="card-header list-header">
-            <div><h2>Estudiantes Inscritos en el Sistema</h2><p>Consulta en tiempo real de registros almacenados con automatizaciones.</p></div>
+            <div><h2>Estudiantes Inscritos en el Sistema - EMI</h2><p>Consulta en tiempo real de registros almacenados con automatizaciones.</p></div>
             <button class="btn btn-refresh" id="refreshListBtn" title="Actualizar lista">🔄 Actualizar</button>
           </div>
           <div class="filter-bar"><input type="text" id="searchFilter" placeholder="Buscar por Nombre, CI, Carrera o Matrícula..." class="search-input"></div>
@@ -120,7 +121,7 @@
       </section>
     </main>
 
-    <footer class="main-footer"><p>Práctica de Aula: Sistema Web con TypeScript, SCSS y SQLite | SIS-REG &copy; 2026</p></footer>
+    <footer class="main-footer"><p>Práctica de Aula: Sistema Web con TypeScript, SCSS y SQLite | EMI &copy; 2026</p></footer>
   </div>
   <script type="module" src="/js/main.js"></script>
 </body>

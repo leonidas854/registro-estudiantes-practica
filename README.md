@@ -70,7 +70,7 @@ En cumplimiento de los requerimientos de automatización institucional del caso 
    - *Ejemplo*: `MAT-2026-SIS-8765432` para Ingeniería de Sistemas.
 2. **Asignación de Correo Institucional Estandarizado**:
    - Algoritmo: Sanitiza tildes y diacríticos (`á` $\rightarrow$ `a`, `ñ` $\rightarrow$ `n`), toma primer nombre + primer apellido + últimos dígitos del CI.
-   - *Ejemplo*: `valeria.mendoza432@universidad.edu.bo`.
+   - *Ejemplo*: `valeria.mendoza432@emi.edu.bo`.
 3. **Asignación Automática de Turno y Jornada de Inducción**:
    - Semestres 1 y 2 $\rightarrow$ Turno Mañana.
    - Semestres 3 a 6 $\rightarrow$ Turno Tarde.
@@ -232,7 +232,7 @@ El proyecto incluye un `Makefile` con comandos listos para usar:
       "ciudad": "La Paz",
       "domicilio": "Av. 6 de Agosto #210",
       "matricula": "MAT-2026-SIS-8765432LP",
-      "correo_institucional": "andrea.quispe432@universidad.edu.bo",
+      "correo_institucional": "andrea.quispe432@emi.edu.bo",
       "turno": "Tarde",
       "fecha_induccion": "2026-11-15",
       "codigo_verificacion": "F83A20B19D4C"
