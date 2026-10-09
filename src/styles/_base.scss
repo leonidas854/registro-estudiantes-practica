@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-sans;
+  background-color: $bg-primary;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(178, 130, 93, 0.08) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(99, 72, 50, 0.06) 0px, transparent 50%);
+  color: $text-primary;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  line-height: 1.6;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main-footer {
+  text-align: center;
+  color: $text-muted;
+  font-size: 0.85rem;
+  padding-top: 1rem;
+}

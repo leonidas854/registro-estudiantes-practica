@@ -1,0 +1,78 @@
+@use 'variables' as *;
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-refresh {
+  background: $bg-secondary;
+  border: 1px solid #dbcfc2;
+  color: $primary;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #e5ded4;
+    color: $primary-hover;
+  }
+}
+
+.filter-bar {
+  margin-bottom: 1.5rem;
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border: 1px solid $border-color;
+  border-radius: $radius-sm;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+
+  th {
+    background: #f5efe8;
+    color: $text-secondary;
+    font-weight: 600;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid $border-color;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid $border-color;
+    color: $text-primary;
+  }
+
+  tr:hover td {
+    background: rgba(99, 72, 50, 0.03);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .loading-cell, .empty-cell {
+    text-align: center;
+    color: $text-muted;
+    padding: 2.5rem 1rem !important;
+  }
+}

@@ -1,0 +1,45 @@
+Práctica de aula: Sistema web el que deseen.
+
+
+* Colocar el título del Caso de estudio
+
+El sistema debe permitir:
+
+Ingresar:
+Nombre completo
+C.I.
+Carrera
+Edad
+Correo electrónico
+Validar los datos antes de enviar el formulario.
+Registrar la información.
+Mostrar un mensaje indicando si el registro fue exitoso.
+Evitar que se registren usuarios con el mismo C.I.
+ _1. Programación del lado del cliente:_ 
+
+* deben implementar un formulario utilizando HTML + CSS + JavaScript.
+
+* JavaScript debe encargarse de:
+
+* Verificar que los campos obligatorios no estén vacíos.
+* Comprobar que la edad sea válida.
+* Validar el formato del correo.
+* Mostrar mensajes de error sin recargar la página.
+* Evitar el envío del formulario cuando existan errores.
+
+ 
+_1. Programación del lado del servidor:_ 
+
+Ahora  deben implementar el procesamiento utilizando, por ejemplo, PHP.
+
+El servidor debe:
+
+* Recibir los datos enviados desde el formulario.
+* Validar nuevamente la información.
+* Comprobar si el C.I. ya está registrado.
+* Guardar la información en una base de datos.
+* Devolver una respuesta de éxito o error.
+Finalmente dependiendo de qué sistema o de que caso de estudio se trata realizar
+ un módulo en el que realice algún proceso de automatización que
+  se hacía de manera manula.....ya que los puntos 1 y 2 ya lo realizaron, 
+Está practica lo pueden hacer de 1  o 2 participantes

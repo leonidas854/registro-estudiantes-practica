@@ -1,0 +1,104 @@
+@use 'variables' as *;
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.75rem;
+  border-radius: $radius-sm;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+
+  &-primary {
+    background: $primary;
+    color: #ffffff;
+    flex: 2;
+    box-shadow: 0 4px 14px $primary-glow;
+
+    &:hover:not(:disabled) {
+      background: $primary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(99, 72, 50, 0.25);
+    }
+
+    &.loading {
+      cursor: not-allowed;
+      opacity: 0.8;
+
+      .btn-text {
+        visibility: hidden;
+      }
+      .spinner {
+        display: block;
+      }
+    }
+  }
+
+  &-secondary {
+    background: $bg-secondary;
+    color: $text-secondary;
+    border: 1px solid $border-color;
+    flex: 1;
+
+    &:hover {
+      background: #e6dfd6;
+      color: $text-primary;
+    }
+  }
+}
+
+.spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.message-banner {
+  padding: 1rem 1.25rem;
+  border-radius: $radius-sm;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.success {
+    background: $success-bg;
+    border: 1px solid $success-border;
+    color: $success;
+  }
+
+  &.error {
+    background: $error-bg;
+    border: 1px solid $error-border;
+    color: $error;
+  }
+}

@@ -1,0 +1,6 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  pnpm: true
+  sqlite3: true
+  unrs-resolver: true

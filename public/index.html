@@ -1,103 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Estudiantes</title>
-    <meta name="description" content="Formulario de registro de estudiantes">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIS-REG | Sistema de Registro y Admisión Estudiantil</title>
+  <meta name="description" content="Caso de estudio: Sistema de Admisión y Registro de Estudiantes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-wrapper">
-            <div class="header">
-                <h1>Registro Estudiantil</h1>
-                <p>Ingresa tus datos para completar la inscripción</p>
+  <div class="app-container">
+    <header class="main-header">
+      <div class="header-badge">Caso de Estudio Universitario</div>
+      <h1 class="system-title">SIS-REG</h1>
+      <p class="system-subtitle">Sistema Web de Admisión y Registro Estudiantil Automatizado</p>
+      <nav class="nav-tabs" role="tablist">
+        <button class="tab-btn active" id="tabFormBtn" role="tab" aria-selected="true">📝 Nuevo Registro</button>
+        <button class="tab-btn" id="tabListBtn" role="tab" aria-selected="false">🎓 Estudiantes Registrados (<span id="totalBadge">0</span>)</button>
+      </nav>
+    </header>
+
+    <main class="content-wrapper">
+      <section id="formSection" class="tab-content active" role="tabpanel">
+        <div class="card form-card">
+          <div class="card-header">
+            <h2>Formulario de Admisión Académica</h2>
+            <p>Complete los datos requeridos para validación y procesamiento institucional.</p>
+          </div>
+          <div id="messageBox" class="message-banner hidden" role="alert"></div>
+          <form id="registroForm" novalidate autocomplete="off">
+            <div class="form-grid">
+              <div class="form-group full-width" id="group-nombre">
+                <label for="nombre">Nombre Completo <span class="required">*</span></label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Carlos Pérez Morales" required><span class="field-error" id="error-nombre"></span>
+              </div>
+              <div class="form-group" id="group-ci">
+                <label for="ci">Cédula de Identidad (C.I.) <span class="required">*</span></label>
+                <input type="text" id="ci" name="ci" placeholder="Ej: 8945123 o 8945123-LP" required><span class="field-error" id="error-ci"></span>
+              </div>
+              <div class="form-group" id="group-edad">
+                <label for="edad">Edad <span class="required">*</span></label>
+                <input type="number" id="edad" name="edad" placeholder="Ej: 21" min="16" max="90" required><span class="field-error" id="error-edad"></span>
+              </div>
+              <div class="form-group" id="group-carrera">
+                <label for="carrera">Carrera Universitaria <span class="required">*</span></label>
+                <div class="select-wrapper">
+                  <select id="carrera" name="carrera" required>
+                    <option value="" disabled selected>Selecciona tu carrera</option>
+                    <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                    <option value="Ingeniería de Sistemas Electrónico">Ingeniería de Sistemas Electrónicos</option>
+                    <option value="Ingeniería Comercial">Ingeniería Comercial</option>
+                    <option value="Ingenieria Civil">Ingenieria Civil</option>
+                    <option value="Ingeniería Agroindustrial">Ingeniería Agroindustrial</option>
+                  </select>
+                </div>
+                <span class="field-error" id="error-carrera"></span>
+              </div>
+              <div class="form-group" id="group-semestre">
+                <label for="semestre">Semestre de Ingreso <span class="required">*</span></label>
+                <div class="select-wrapper">
+                  <select id="semestre" name="semestre" required>
+                    <option value="" disabled selected>Selecciona un semestre</option>
+                    <option value="1">1er Semestre</option><option value="2">2do Semestre</option><option value="3">3er Semestre</option><option value="4">4to Semestre</option><option value="5">5to Semestre</option>
+                    <option value="6">6to Semestre</option><option value="7">7mo Semestre</option><option value="8">8vo Semestre</option><option value="9">9no Semestre</option><option value="10">10mo Semestre</option>
+                  </select>
+                </div>
+                <span class="field-error" id="error-semestre"></span>
+              </div>
+              <div class="form-group full-width" id="group-correo">
+                <label for="correo">Correo Electrónico Personal <span class="required">*</span></label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo.personal@correo.com" required><span class="field-error" id="error-correo"></span>
+              </div>
+              <div class="form-group" id="group-ciudad">
+                <label for="ciudad">Ciudad de Residencia <span class="required">*</span></label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Santa Cruz de la Sierra" required><span class="field-error" id="error-ciudad"></span>
+              </div>
+              <div class="form-group" id="group-domicilio">
+                <label for="domicilio">Dirección / Domicilio <span class="required">*</span></label>
+                <input type="text" id="domicilio" name="domicilio" placeholder="Ej: Av. Las Américas #340" required><span class="field-error" id="error-domicilio"></span>
+              </div>
             </div>
-            
-            <form id="registroForm">
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="El nombre solo debe contener letras y espacios">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ci">Cédula de Identidad (CI)</label>
-                        <input type="text" id="ci" name="ci" required placeholder="Ej: 1234567">
-                    </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submitBtn"><span class="btn-text">Confirmar y Registrar</span><div class="spinner" id="spinner"></div></button>
+              <button type="button" class="btn btn-secondary" id="resetBtn">Limpiar Formulario</button>
+            </div>
+          </form>
 
-                    <div class="form-group">
-                        <label for="edad">Edad</label>
-                        <input type="number" id="edad" name="edad" required placeholder="Ej: 20" min="16" max="100">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="carrera">Carrera</label>
-                        <div class="select-wrapper">
-                            <select id="carrera" name="carrera" required>
-                                <option value="" disabled selected>Selecciona tu carrera</option>
-                                <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
-                                <option value="Administración de Empresas">Administración de Empresas</option>
-                                <option value="Derecho">Derecho</option>
-                                <option value="Medicina">Medicina</option>
-                                <option value="Arquitectura">Arquitectura</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="semestre">Semestre</label>
-                        <div class="select-wrapper">
-                            <select id="semestre" name="semestre" required>
-                                <option value="" disabled selected>Selecciona un semestre</option>
-                                <option value="1">1er Semestre</option>
-                                <option value="2">2do Semestre</option>
-                                <option value="3">3er Semestre</option>
-                                <option value="4">4to Semestre</option>
-                                <option value="5">5to Semestre</option>
-                                <option value="6">6to Semestre</option>
-                                <option value="7">7mo Semestre</option>
-                                <option value="8">8vo Semestre</option>
-                                <option value="9">9no Semestre</option>
-                                <option value="10">10mo Semestre</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="correo">Correo Electrónico</label>
-                        <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ciudad">Ciudad</label>
-                        <input type="text" id="ciudad" name="ciudad" required placeholder="Ej: Santa Cruz">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="domicilio">Domicilio</label>
-                        <input type="text" id="domicilio" name="domicilio" required placeholder="Ej: Av. Principal 123">
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <span class="btn-text">Registrar Estudiante</span>
-                        <div class="spinner" id="spinner"></div>
-                    </button>
-                    
-                    <button type="reset" class="reset-btn">
-                        <span class="btn-text">Limpiar</span>
-                    </button>
-                </div>
-            </form>
-            
-            <div id="messageBox" class="message-box hidden"></div>
+          <div id="credentialCard" class="credential-card hidden">
+            <div class="credential-header"><span class="credential-tag">Inscripción Aprobada</span><h3>Credencial Académica Digital</h3></div>
+            <div class="credential-body">
+              <div class="cred-item"><span class="cred-label">Estudiante:</span><span class="cred-value" id="credNombre">-</span></div>
+              <div class="cred-item"><span class="cred-label">Matrícula Generada:</span><span class="cred-value highlight" id="credMatricula">-</span></div>
+              <div class="cred-item"><span class="cred-label">Correo Institucional:</span><span class="cred-value" id="credEmailInst">-</span></div>
+              <div class="cred-grid">
+                <div class="cred-item"><span class="cred-label">Turno Asignado:</span><span class="cred-value" id="credTurno">-</span></div>
+                <div class="cred-item"><span class="cred-label">Fecha de Inducción:</span><span class="cred-value" id="credInduccion">-</span></div>
+              </div>
+              <div class="cred-item"><span class="cred-label">Código de Verificación:</span><span class="cred-value code" id="credCodigo">-</span></div>
+            </div>
+          </div>
         </div>
-    </div>
-    
-    <script src="/app.js"></script>
+      </section>
+
+      <section id="listSection" class="tab-content" role="tabpanel">
+        <div class="card list-card">
+          <div class="card-header list-header">
+            <div><h2>Estudiantes Inscritos en el Sistema</h2><p>Consulta en tiempo real de registros almacenados con automatizaciones.</p></div>
+            <button class="btn btn-refresh" id="refreshListBtn" title="Actualizar lista">🔄 Actualizar</button>
+          </div>
+          <div class="filter-bar"><input type="text" id="searchFilter" placeholder="Buscar por Nombre, CI, Carrera o Matrícula..." class="search-input"></div>
+          <div class="table-responsive">
+            <table class="data-table" id="studentsTable">
+              <thead><tr><th>C.I.</th><th>Estudiante</th><th>Carrera</th><th>Matrícula</th><th>Correo Institucional</th><th>Turno</th><th>Código</th></tr></thead>
+              <tbody id="studentsTableBody"><tr><td colspan="7" class="loading-cell">Cargando registros...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer"><p>Práctica de Aula: Sistema Web con TypeScript, SCSS y SQLite | SIS-REG &copy; 2026</p></footer>
+  </div>
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>

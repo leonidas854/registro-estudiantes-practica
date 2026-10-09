@@ -1,9 +1,7 @@
-const app = require('./src/app');
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-    console.log(`- API: http://localhost:${PORT}/api/registro`);
-    console.log(`- Web: http://localhost:${PORT}/auth/registro`);
-});
+// Wrapper para compatibilidad hacia atrás con 'node server.js'
+try {
+  require('./dist/server');
+} catch (e) {
+  console.log('El proyecto ha sido migrado a TypeScript.');
+  console.log('Ejecuta primero "npm run build" y luego "npm start", o utiliza "npm run dev".');
+}
